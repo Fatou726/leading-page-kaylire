@@ -16,23 +16,63 @@
             line-height: 1.6;
             color: #333;
             background: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Particles Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(83, 114, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
         }
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #5372FF 0%, #5372FF 100%);
-            color: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #5372FF;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.1);
         }
 
         .logo img {
             height: 50px;
             width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05) rotate(2deg);
         }
 
         nav {
@@ -51,31 +91,50 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #333;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #5372FF, #0dc064);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
-            opacity: 0.7;
+            color: #5372FF;
         }
 
         .menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: #5372FF;
             font-size: 1.5rem;
             cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #5372FF 0%, #5372FF 100%);
+            /* background: linear-gradient(135deg, #5372FF 0%, #4a5fd8 100%); */
+            background-image: url(./images/bg2.png);
             color: white;
-            padding: 150px 2rem 80px;
+            padding: 180px 2rem 100px;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 70px;
             position: relative;
             overflow: hidden;
         }
@@ -85,225 +144,341 @@
             position: absolute;
             top: -50%;
             right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
             width: 500px;
             height: 500px;
             background: rgba(255,255,255,0.05);
             border-radius: 50%;
+            animation: pulse 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: slideDown 0.8s ease;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: slideDown 1s ease;
+            background: linear-gradient(45deg, #fff, #0dc064);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             opacity: 0.95;
-            animation: slideUp 0.8s ease 0.2s both;
+            animation: slideUp 1s ease 0.3s both;
+            line-height: 1.8;
+            color: #000;
         }
 
         @keyframes slideDown {
-            from { transform: translateY(-30px); opacity: 0; }
+            from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
         @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
+            from { transform: translateY(50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: slideUp 0.8s ease 0.4s both;
+            animation: slideUp 1s ease 0.6s both;
         }
 
         .btn {
-            padding: 12px 30px;
+            padding: 15px 40px;
             border: none;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-primary {
-            background: #0dc064;
+            background: linear-gradient(135deg, #0dc064, #0aa352);
             color: white;
+            box-shadow: 0 10px 30px rgba(13, 192, 100, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13, 192, 100, 0.4);
         }
 
         .btn-secondary {
-            background: #0dc064;
+            background: rgba(255,255,255,0.2);
             color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            background: white;
+            color: #5372FF;
+            box-shadow: 0 15px 40px rgba(255,255,255,0.3);
         }
 
         /* Features Section */
         .features {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #5372FF;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, #5372FF, #0dc064);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
         }
 
         .feature-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(83, 114, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            background: white;
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(83, 114, 255, 0.2);
+            background: linear-gradient(135deg, #fff 0%, #fff 100%);
+            border-color: #5372FF;
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .feature-card:hover .feature-icon {
+            animation: rotate 0.6s ease;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
             color: #5372FF;
+            font-weight: 700;
         }
 
         .feature-card p {
             color: #666;
             line-height: 1.8;
+            font-size: 1rem;
         }
 
         /* Categories Section */
         .categories {
-            padding: 80px 2rem;
-            background: #f8f9fa;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 100px 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            z-index: 1;
         }
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .category-box {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 2.5rem;
+            border-radius: 20px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .category-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(83, 114, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .category-box:hover::before {
+            left: 100%;
         }
 
         .category-box:hover {
             border-color: #5372FF;
-            background: linear-gradient(135deg, rgba(83,114,255,0.05), rgba(83,114,255,0.05));
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 40px rgba(83, 114, 255, 0.2);
+        }
+
+        .category-box div {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: transform 0.4s ease;
+        }
+
+        .category-box:hover div {
+            transform: scale(1.2) rotate(10deg);
         }
 
         .category-box p {
-            font-weight: 600;
-            color: #333;
-            margin-top: 0.5rem;
+            font-weight: 700;
+            color: #5372FF;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
-       /* Categories Section - amélioré */
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-}
 
-.category-box {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.category-box:hover {
-    border-color: #5372FF;
-    background: linear-gradient(135deg, rgba(83,114,255,0.05), rgba(83,114,255,0.05));
-}
-
-/* Emoji */
-.category-box div {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Titre de catégorie en bleu */
-.category-box p {
-    font-weight: 700;
-    color: #5372FF; /* bleu correspondant à ton logo */
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Description catégorie */
-.category-box small {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: block;
-}
+        .category-box small {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            display: block;
+        }
 
         /* App Preview Section */
         .app-preview {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            background: #f8f9fa;
+            position: relative;
+            z-index: 1;
         }
 
         .preview-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
-            margin-bottom: 4rem;
+            margin-bottom: 6rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
         }
 
         .preview-container.reverse {
@@ -317,12 +492,23 @@
         .preview-phone {
             position: relative;
             margin: 0 auto;
-            width: 280px;
-            height: 560px;
-            background: #5372FF;
+            width: 300px;
+            height: 600px;
+            background: linear-gradient(135deg, #5372FF, #4a5fd8);
             border-radius: 50px;
             padding: 20px;
-            box-shadow: 0 20px 60px rgba(83,114,255,0.3);
+            box-shadow: 0 30px 80px rgba(83, 114, 255, 0.4);
+            transition: transform 0.5s ease;
+            animation: phoneFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .preview-phone:hover {
+            transform: scale(1.05) rotateY(10deg);
         }
 
         .phone-notch {
@@ -347,13 +533,18 @@
             border-radius: 40px;
             overflow: hidden;
             border: 3px solid #333;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
         }
 
         .phone-screen img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .preview-phone:hover .phone-screen img {
+            transform: scale(1.1);
         }
 
         .phone-home {
@@ -368,30 +559,55 @@
         }
 
         .preview-features h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #5372FF;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
         }
 
         .preview-features p {
             color: #666;
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
         }
 
         .preview-list li {
             color: #333;
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-            padding-left: 0;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .preview-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0dc064;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* Stats Section */
         .stats {
-            background: #5372FF;
+            background: linear-gradient(135deg, #5372FF 0%, #4a5fd8 100%);
             color: white;
-            padding: 60px 2rem;
+            padding: 80px 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
         }
 
         .stats-container {
@@ -399,52 +615,89 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            animation: countUp 2s ease;
+        }
+
+        @keyframes countUp {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         .stat-item h3 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #fff, #0dc064);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            opacity: 0.95;
         }
 
         /* Testimonials Section */
         .testimonials {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
         .testimonial {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-left: 4px solid #5372FF;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-left: 5px solid #5372FF;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 8rem;
+            color: rgba(83, 114, 255, 0.1);
+            font-family: serif;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(83, 114, 255, 0.15);
         }
 
         .stars {
             color: #ffc107;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
         }
 
         .testimonial-text {
             color: #666;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-style: italic;
-            line-height: 1.8;
+            line-height: 1.9;
+            font-size: 1.05rem;
         }
 
         .user-info {
@@ -454,21 +707,23 @@
         }
 
         .user-avatar {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            background: #5372FF;
+            background: linear-gradient(135deg, #5372FF, #0dc064);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
             font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(83, 114, 255, 0.3);
         }
 
         .user-details h4 {
             color: #333;
             margin-bottom: 0.2rem;
+            font-weight: 700;
         }
 
         .user-details p {
@@ -478,44 +733,81 @@
 
         /* Download Section */
         .download {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .download-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .store-btn {
-            padding: 1rem 2rem;
-            background: #222;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #222, #444);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 15px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             display: inline-block;
-            font-weight: 600;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .store-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .store-btn:hover::before {
+            width: 400px;
+            height: 400px;
         }
 
         .store-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             color: white;
-            padding: 3rem 2rem 1rem;
+            padding: 4rem 2rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(83, 114, 255, 0.1);
+            border-radius: 50%;
+            animation: pulse 10s ease-in-out infinite;
         }
 
         .footer-content {
@@ -523,27 +815,38 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-section h4 {
-            margin-bottom: 1rem;
-            color: #5372FF;
+            margin-bottom: 1.5rem;
+            color: #0dc064;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
 
         .footer-section ul {
             list-style: none;
         }
 
+        .footer-section li {
+            margin-bottom: 0.8rem;
+        }
+
         .footer-section a {
             color: #ccc;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            padding-left: 0;
         }
 
         .footer-section a:hover {
-            color: white;
+            color: #0dc064;
+            padding-left: 10px;
         }
 
         .footer-bottom {
@@ -551,6 +854,8 @@
             border-top: 1px solid #333;
             padding-top: 2rem;
             color: #999;
+            position: relative;
+            z-index: 1;
         }
 
         /* Mobile Responsive */
@@ -561,32 +866,31 @@
             .menu-toggle {
                 display: block;
             }
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            .cta-buttons { flex-direction: column; }
-            .section-title { font-size: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
             .features-grid { grid-template-columns: 1fr; }
-            .categories-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
-            .stat-item h3 { font-size: 2rem; }
+            .categories-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+            .preview-container { grid-template-columns: 1fr; gap: 3rem; }
+            .preview-container.reverse { direction: ltr; }
+            .stat-item h3 { font-size: 2.5rem; }
             .testimonials-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
-            nav { padding: 0 1rem; }
-            .logo { font-size: 1.3rem; }
-            .hero { padding: 120px 1rem 60px; }
-            .hero h1 { font-size: 1.8rem; }
-            .hero p { font-size: 0.95rem; }
-            .btn { padding: 10px 20px; font-size: 0.9rem; }
-            .section-title { font-size: 1.5rem; margin-bottom: 2rem; }
-            .features { padding: 50px 1rem; }
-            .download { padding: 50px 1rem; }
+            .hero { padding: 150px 1rem 80px; }
+            .hero h1 { font-size: 2rem; }
+            .btn { padding: 12px 30px; font-size: 1rem; }
+            .section-title { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
     <!-- Header -->
-    <header>
+    <header id="header">
         <nav>
             <div class="logo"><img src="images/KayLire.png" alt="Logo Kaylire"/></div>
             <ul class="nav-links">
@@ -633,7 +937,7 @@
             <div class="feature-card">
                 <div class="feature-icon">📱</div>
                 <h3>Synchronisation</h3>
-                <p>Reprenez votre lecture sur n’importe quel appareil, sans perdre votre progression.</p>
+                <p>Reprenez votre lecture sur n'importe quel appareil, sans perdre votre progression.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⭐</div>
@@ -650,126 +954,124 @@
 
     <!-- Categories Section -->
     <section class="categories" id="categories">
-    <h2 class="section-title">Explorez Nos Catégories</h2>
-    <div class="categories-grid">
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">📖</div>
-            <p><strong>Romans</strong></p>
-            <small>Plongez dans des histoires captivantes et laissez-vous emporter par l’imaginaire.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">🏛️</div>
-            <p><strong>Classiques</strong></p>
-            <small>Redécouvrez les chefs-d’œuvre qui ont marqué la littérature à travers le temps.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">✍️</div>
-            <p><strong>Poésie</strong></p>
-            <small>Laissez-vous toucher par des mots qui vibrent et résonnent dans votre cœur.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">🌍</div>
-            <p><strong>Littérature Africaine</strong></p>
-            <small>Explorez les récits, contes et voix uniques du continent africain.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">💡</div>
-            <p><strong>Développement Personnel</strong></p>
-            <small>Inspirez-vous, apprenez et grandissez avec des lectures motivantes et enrichissantes.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">🧒</div>
-            <p><strong>Jeunesse</strong></p>
-            <small>Des histoires amusantes et éducatives pour les petits et les jeunes lecteurs.</small>
-        </div>
-    </div>
-</section>
-
-
- <!-- App Preview Section -->
-<section class="app-preview" id="preview">
-    <h2 class="section-title">Aperçu de l'Application</h2>
-    
-    <div class="preview-container">
-        <div class="preview-phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=800&fit=crop" alt="Écran accueil Kaylire">
+        <h2 class="section-title">Explorez Nos Catégories</h2>
+        <div class="categories-grid">
+            <div class="category-box">
+                <div>📖</div>
+                <p>Romans</p>
+                <small>Plongez dans des histoires captivantes et laissez-vous emporter par l'imaginaire.</small>
             </div>
-            <div class="phone-home"></div>
-        </div>
-        <div class="preview-features">
-            <h3>Écran d'Accueil</h3>
-            <p>Découvrez vos prochaines lectures en un clin d'œil. Kaylire vous propose les livres les plus captivants du moment dans une interface simple et agréable.</p>
-            <ul class="preview-list">
-                <li>Suggestions personnalisées selon vos goûts</li>
-                <li>Découverte d’auteurs et de genres variés</li>
-                <li>Listes de lectures tendance et populaires</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="preview-container reverse">
-        <div class="preview-phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <img src="https://images.unsplash.com/photo-1507842217343-583684e5fef5?w=400&h=800&fit=crop" alt="Lecteur Kaylire">
+            <div class="category-box">
+                <div>🏛️</div>
+                <p>Classiques</p>
+                <small>Redécouvrez les chefs-d'œuvre qui ont marqué la littérature à travers le temps.</small>
             </div>
-            <div class="phone-home"></div>
-        </div>
-        <div class="preview-features">
-            <h3>Lecteur Immersif</h3>
-            <p>Plongez dans vos livres préférés avec un confort maximal. Mode sombre, police ajustable et marque-pages pour une lecture sans interruption.</p>
-            <ul class="preview-list">
-                <li>Lecture confortable jour et nuit</li>
-                <li>Ajustement du texte selon vos préférences</li>
-                <li>Progression sauvegardée automatiquement</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="preview-container">
-        <div class="preview-phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=400&h=800&fit=crop" alt="Bibliothèque Kaylire">
+            <div class="category-box">
+                <div>✍️</div>
+                <p>Poésie</p>
+                <small>Laissez-vous toucher par des mots qui vibrent et résonnent dans votre cœur.</small>
             </div>
-            <div class="phone-home"></div>
+            <div class="category-box">
+                <div>🌍</div>
+                <p>Littérature Africaine</p>
+                <small>Explorez les récits, contes et voix uniques du continent africain.</small>
+            </div>
+            <div class="category-box">
+                <div>💡</div>
+                <p>Développement Personnel</p>
+                <small>Inspirez-vous, apprenez et grandissez avec des lectures motivantes et enrichissantes.</small>
+            </div>
+            <div class="category-box">
+                <div>🧒</div>
+                <p>Jeunesse</p>
+                <small>Des histoires amusantes et éducatives pour les petits et les jeunes lecteurs.</small>
+            </div>
         </div>
-        <div class="preview-features">
-            <h3>Votre Bibliothèque</h3>
-            <p>Organisez vos lectures, marquez vos passages préférés et retrouvez facilement vos livres favoris. Kaylire transforme votre expérience de lecture en un véritable plaisir.</p>
-            <ul class="preview-list">
-                <li>Collections personnelles et organisées</li>
-                <li>Marque-pages et notes pour vos passages clés</li>
-                <li>Historique de lecture accessible à tout moment</li>
-            </ul>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Stats Section -->
-<section class="stats">
-    <div class="stats-container">
-        <div class="stat-item">
-            <h3>50K+</h3>
-            <p>Livres à explorer</p>
+    <!-- App Preview Section -->
+    <section class="app-preview" id="preview">
+        <h2 class="section-title">Aperçu de l'Application</h2>
+        
+        <div class="preview-container">
+            <div class="preview-phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=800&fit=crop" alt="Écran accueil Kaylire">
+                </div>
+                <div class="phone-home"></div>
+            </div>
+            <div class="preview-features">
+                <h3>Écran d'Accueil</h3>
+                <p>Découvrez vos prochaines lectures en un clin d'œil. Kaylire vous propose les livres les plus captivants du moment dans une interface simple et agréable.</p>
+                <ul class="preview-list">
+                    <li>Suggestions personnalisées selon vos goûts</li>
+                    <li>Découverte d'auteurs et de genres variés</li>
+                    <li>Listes de lectures tendance et populaires</li>
+                </ul>
+            </div>
         </div>
-        <div class="stat-item">
-            <h3>100K+</h3>
-            <p>Lecteurs passionnés</p>
-        </div>
-        <div class="stat-item">
-            <h3>15M+</h3>
-            <p>Pages lues avec enthousiasme</p>
-        </div>
-        <div class="stat-item">
-            <h3>4.8★</h3>
-            <p>Notation moyenne par nos lecteurs</p>
-        </div>
-    </div>
-</section>
 
+        <div class="preview-container reverse">
+            <div class="preview-phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583684e5fef5?w=400&h=800&fit=crop" alt="Lecteur Kaylire">
+                </div>
+                <div class="phone-home"></div>
+            </div>
+            <div class="preview-features">
+                <h3>Lecteur Immersif</h3>
+                <p>Plongez dans vos livres préférés avec un confort maximal. Mode sombre, police ajustable et marque-pages pour une lecture sans interruption.</p>
+                <ul class="preview-list">
+                    <li>Lecture confortable jour et nuit</li>
+                    <li>Ajustement du texte selon vos préférences</li>
+                    <li>Progression sauvegardée automatiquement</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="preview-container">
+            <div class="preview-phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=400&h=800&fit=crop" alt="Bibliothèque Kaylire">
+                </div>
+                <div class="phone-home"></div>
+            </div>
+            <div class="preview-features">
+                <h3>Votre Bibliothèque</h3>
+                <p>Organisez vos lectures, marquez vos passages préférés et retrouvez facilement vos livres favoris. Kaylire transforme votre expérience de lecture en un véritable plaisir.</p>
+                <ul class="preview-list">
+                    <li>Collections personnelles et organisées</li>
+                    <li>Marque-pages et notes pour vos passages clés</li>
+                    <li>Historique de lecture accessible à tout moment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>50K+</h3>
+                <p>Livres à explorer</p>
+            </div>
+            <div class="stat-item">
+                <h3>100K+</h3>
+                <p>Lecteurs passionnés</p>
+            </div>
+            <div class="stat-item">
+                <h3>15M+</h3>
+                <p>Pages lues avec enthousiasme</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.8★</h3>
+                <p>Notation moyenne par nos lecteurs</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="avis">
@@ -777,7 +1079,7 @@
         <div class="testimonials-grid">
             <div class="testimonial">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">“Kaylire a transformé mes moments de lecture. Tout est à portée de main, et j’adore les recommandations personnalisées !”</p>
+                <p class="testimonial-text">"Kaylire a transformé mes moments de lecture. Tout est à portée de main, et j'adore les recommandations personnalisées !"</p>
                 <div class="user-info">
                     <div class="user-avatar">A</div>
                     <div class="user-details">
@@ -788,7 +1090,7 @@
             </div>
             <div class="testimonial">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">“Une application intuitive et belle. Je peux enfin lire mes classiques africains sur mon téléphone.”</p>
+                <p class="testimonial-text">"Une application intuitive et belle. Je peux enfin lire mes classiques africains sur mon téléphone."</p>
                 <div class="user-info">
                     <div class="user-avatar">M</div>
                     <div class="user-details">
@@ -799,7 +1101,7 @@
             </div>
             <div class="testimonial">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">“J’adore la fonction favoris et la possibilité de noter mes passages préférés. Une vraie révolution pour mes lectures.”</p>
+                <p class="testimonial-text">"J'adore la fonction favoris et la possibilité de noter mes passages préférés. Une vraie révolution pour mes lectures."</p>
                 <div class="user-info">
                     <div class="user-avatar">S</div>
                     <div class="user-details">
@@ -814,10 +1116,10 @@
     <!-- Download Section -->
     <section class="download" id="download">
         <h2 class="section-title">Téléchargez Kaylire</h2>
-        <p>Emportez votre bibliothèque partout avec vous et commencez votre voyage de lecture dès aujourd’hui !</p>
+        <p>Emportez votre bibliothèque partout avec vous et commencez votre voyage de lecture dès aujourd'hui !</p>
         <div class="download-buttons">
-            <a href="#" class="store-btn">Disponible sur Play Store</a>
-            <a href="#" class="store-btn">Disponible sur App Store</a>
+            <a href="#" class="store-btn">📱 Disponible sur Play Store</a>
+            <a href="#" class="store-btn">🍎 Disponible sur App Store</a>
         </div>
     </section>
 
@@ -849,5 +1151,64 @@
             &copy; 2025 Kaylire. Tous droits réservés.
         </div>
     </footer>
+
+    <script>
+        // Particles Animation
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .category-box, .testimonial, .preview-container').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
