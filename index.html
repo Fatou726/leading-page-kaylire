@@ -883,6 +883,83 @@
             .btn { padding: 12px 30px; font-size: 1rem; }
             .section-title { font-size: 1.8rem; }
         }
+
+             .about {
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+            padding: 80px 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .about-text .section-title {
+            font-size: 2.2em;
+            color: #5372FF;
+            margin-bottom: 15px;
+        }
+
+        .about-text .quote {
+            font-style: italic;
+            color: #5a4b41;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .about-text .author {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            color: #0dc064;
+        }
+
+        .about-text .vision {
+            font-size: 1.05em;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .about-text .btn {
+            background-color: #0dc064;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .about-text .btn:hover {
+            background-color: #0dc064;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -1047,6 +1124,30 @@
                     <li>Marque-pages et notes pour vos passages clés</li>
                     <li>Historique de lecture accessible à tout moment</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+     <section class="about" id="abouts">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">En Savoir Plus</h2>
+                <p class="quote">
+                    “Un lecteur vit mille vies avant de mourir. Celui qui ne lit jamais n’en vit qu’une.”
+                    <span class="author">— George R.R. Martin</span>
+                </p>
+                <p class="vision">
+                    Chez <strong>Kaylire</strong>, nous croyons que chaque lecture est une porte ouverte sur le monde.
+                    Notre mission est simple : <strong>rendre la littérature accessible à tous</strong>, valoriser les
+                    auteurs africains et faire découvrir des voix inspirantes venues d’ailleurs.
+                    <br><br>
+                    Kaylire, c’est plus qu’une bibliothèque numérique — c’est une communauté de passionnés qui lisent,
+                    partagent et font vivre la culture à travers les mots.
+                </p>
+                <a href="#categories" class="btn">Découvrir Nos Livres</a>
+            </div>
+            <div class="about-image">
+                <img src="images/femme.png" alt="Lecture africaine" />
             </div>
         </div>
     </section>
