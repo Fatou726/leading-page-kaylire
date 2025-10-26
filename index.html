@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
         .logo img {
@@ -87,7 +88,7 @@
             right: -10%;
             width: 500px;
             height: 500px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
         }
 
@@ -112,13 +113,27 @@
         }
 
         @keyframes slideDown {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .cta-buttons {
@@ -148,7 +163,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .btn-secondary {
@@ -158,7 +173,7 @@
 
         .btn-secondary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         /* Features Section */
@@ -192,7 +207,7 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             background: white;
         }
 
@@ -238,7 +253,7 @@
 
         .category-box:hover {
             border-color: #5372FF;
-            background: linear-gradient(135deg, rgba(83,114,255,0.05), rgba(83,114,255,0.05));
+            background: linear-gradient(135deg, rgba(83, 114, 255, 0.05), rgba(83, 114, 255, 0.05));
         }
 
         .category-box p {
@@ -246,49 +261,51 @@
             color: #333;
             margin-top: 0.5rem;
         }
-       /* Categories Section - amélioré */
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-}
 
-.category-box {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
+        /* Categories Section - amélioré */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
 
-.category-box:hover {
-    border-color: #5372FF;
-    background: linear-gradient(135deg, rgba(83,114,255,0.05), rgba(83,114,255,0.05));
-}
+        .category-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
 
-/* Emoji */
-.category-box div {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
+        .category-box:hover {
+            border-color: #5372FF;
+            background: linear-gradient(135deg, rgba(83, 114, 255, 0.05), rgba(83, 114, 255, 0.05));
+        }
 
-/* Titre de catégorie en bleu */
-.category-box p {
-    font-weight: 700;
-    color: #5372FF; /* bleu correspondant à ton logo */
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
+        /* Emoji */
+        .category-box div {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
 
-/* Description catégorie */
-.category-box small {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: block;
-}
+        /* Titre de catégorie en bleu */
+        .category-box p {
+            font-weight: 700;
+            color: #5372FF;
+            /* bleu correspondant à ton logo */
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Description catégorie */
+        .category-box small {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            display: block;
+        }
 
         /* App Preview Section */
         .app-preview {
@@ -310,7 +327,7 @@
             direction: rtl;
         }
 
-        .preview-container.reverse > * {
+        .preview-container.reverse>* {
             direction: ltr;
         }
 
@@ -322,7 +339,7 @@
             background: #5372FF;
             border-radius: 50px;
             padding: 20px;
-            box-shadow: 0 20px 60px rgba(83,114,255,0.3);
+            box-shadow: 0 20px 60px rgba(83, 114, 255, 0.3);
         }
 
         .phone-notch {
@@ -347,7 +364,7 @@
             border-radius: 40px;
             overflow: hidden;
             border: 3px solid #333;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .phone-screen img {
@@ -430,7 +447,7 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             border-left: 4px solid #5372FF;
         }
 
@@ -508,7 +525,7 @@
 
         .store-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer */
@@ -558,114 +575,168 @@
             .nav-links {
                 display: none;
             }
+
             .menu-toggle {
                 display: block;
             }
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            .cta-buttons { flex-direction: column; }
-            .section-title { font-size: 2rem; }
-            .features-grid { grid-template-columns: 1fr; }
-            .categories-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
-            .stat-item h3 { font-size: 2rem; }
-            .testimonials-grid { grid-template-columns: 1fr; }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
-            nav { padding: 0 1rem; }
-            .logo { font-size: 1.3rem; }
-            .hero { padding: 120px 1rem 60px; }
-            .hero h1 { font-size: 1.8rem; }
-            .hero p { font-size: 0.95rem; }
-            .btn { padding: 10px 20px; font-size: 0.9rem; }
-            .section-title { font-size: 1.5rem; margin-bottom: 2rem; }
-            .features { padding: 50px 1rem; }
-            .download { padding: 50px 1rem; }
+            nav {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 120px 1rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .features {
+                padding: 50px 1rem;
+            }
+
+            .download {
+                padding: 50px 1rem;
+            }
         }
+
         .about {
-  background: linear-gradient(135deg, #ffffff, #ffffff);
-  padding: 80px 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+            padding: 80px 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.about-content {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  flex-wrap: wrap;
-}
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
 
-.about-text {
-  flex: 1;
-  max-width: 600px;
-}
+        .about-text {
+            flex: 1;
+            max-width: 600px;
+        }
 
-.about-text .section-title {
-  font-size: 2.2em;
-  color: #5372FF;
-  margin-bottom: 15px;
-}
+        .about-text .section-title {
+            font-size: 2.2em;
+            color: #5372FF;
+            margin-bottom: 15px;
+        }
 
-.about-text .quote {
-  font-style: italic;
-  color: #5a4b41;
-  font-size: 1.1em;
-  margin-bottom: 25px;
-}
+        .about-text .quote {
+            font-style: italic;
+            color: #5a4b41;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
 
-.about-text .author {
-  display: block;
-  text-align: right;
-  font-weight: bold;
-  color: #0dc064;
-}
+        .about-text .author {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            color: #0dc064;
+        }
 
-.about-text .vision {
-  font-size: 1.05em;
-  color: #333;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
+        .about-text .vision {
+            font-size: 1.05em;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
 
-.about-text .btn {
-  background-color: #0dc064;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: 0.3s;
-}
+        .about-text .btn {
+            background-color: #0dc064;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
 
-.about-text .btn:hover {
-  background-color: #0dc064;
-}
+        .about-text .btn:hover {
+            background-color: #0dc064;
+        }
 
-.about-image {
-  flex: 1;
-  text-align: center;
-}
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
 
-.about-image img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
 
-.about-image img:hover {
-  transform: scale(1.05);
-}
-
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo"><img src="images/KayLire.png" alt="Logo Kaylire"/></div>
+            <div class="logo"><img src="images/KayLire.png" alt="Logo Kaylire" /></div>
             <ul class="nav-links">
                 <li><a href="#features">Fonctionnalités</a></li>
                 <li><a href="#categories">Catégories</a></li>
@@ -680,7 +751,9 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Lisez. Découvrez. Ressentez.</h1>
-            <p>Avec Kaylire, la lecture devient une expérience vivante. Explorez des romans passionnants, redécouvrez les classiques et laissez la richesse de la littérature africaine vous inspirer — partout, à tout moment.</p>
+            <p>Avec Kaylire, la lecture devient une expérience vivante. Explorez des romans passionnants, redécouvrez
+                les classiques et laissez la richesse de la littérature africaine vous inspirer — partout, à tout
+                moment.</p>
             <div class="cta-buttons">
                 <a href="#download" class="btn btn-primary">Commencer à Lire</a>
                 <a href="#abouts" class="btn btn-secondary">En Savoir Plus</a>
@@ -727,148 +800,156 @@
         </div>
     </section>
     <section class="about" id="abouts">
-  <div class="about-content">
-    <div class="about-text">
-      <h2 class="section-title">En Savoir Plus</h2>
-      <p class="quote">
-  “Un lecteur vit mille vies avant de mourir. Celui qui ne lit jamais n’en vit qu’une.”  
-  <span class="author">— George R.R. Martin</span>
-</p>
-<p class="vision">
-  Chez <strong>Kaylire</strong>, nous croyons que chaque lecture est une porte ouverte sur le monde.  
-  Notre mission est simple : <strong>rendre la littérature accessible à tous</strong>, valoriser les auteurs africains et faire découvrir des voix inspirantes venues d’ailleurs.  
-  <br><br>
-  Kaylire, c’est plus qu’une bibliothèque numérique — c’est une communauté de passionnés qui lisent, partagent et font vivre la culture à travers les mots.
-</p>
-<a href="#categories" class="btn">Découvrir Nos Livres</a>
-    </div>
-    <div class="about-image">
-      <img src="images/femme.png" alt="Lecture africaine" />
-    </div>
-  </div>
-</section>
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">En Savoir Plus</h2>
+                <p class="quote">
+                    “Un lecteur vit mille vies avant de mourir. Celui qui ne lit jamais n’en vit qu’une.”
+                    <span class="author">— George R.R. Martin</span>
+                </p>
+                <p class="vision">
+                    Chez <strong>Kaylire</strong>, nous croyons que chaque lecture est une porte ouverte sur le monde.
+                    Notre mission est simple : <strong>rendre la littérature accessible à tous</strong>, valoriser les
+                    auteurs africains et faire découvrir des voix inspirantes venues d’ailleurs.
+                    <br><br>
+                    Kaylire, c’est plus qu’une bibliothèque numérique — c’est une communauté de passionnés qui lisent,
+                    partagent et font vivre la culture à travers les mots.
+                </p>
+                <a href="#categories" class="btn">Découvrir Nos Livres</a>
+            </div>
+            <div class="about-image">
+                <img src="images/femme.png" alt="Lecture africaine" />
+            </div>
+        </div>
+    </section>
 
     <!-- Categories Section -->
     <section class="categories" id="categories">
-    <h2 class="section-title">Explorez Nos Catégories</h2>
-    <div class="categories-grid">
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">📖</div>
-            <p><strong>Romans</strong></p>
-            <small>Plongez dans des histoires captivantes et laissez-vous emporter par l’imaginaire.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">🏛️</div>
-            <p><strong>Classiques</strong></p>
-            <small>Redécouvrez les chefs-d’œuvre qui ont marqué la littérature à travers le temps.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">✍️</div>
-            <p><strong>Poésie</strong></p>
-            <small>Laissez-vous toucher par des mots qui vibrent et résonnent dans votre cœur.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">🌍</div>
-            <p><strong>Littérature Africaine</strong></p>
-            <small>Explorez les récits, contes et voix uniques du continent africain.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">💡</div>
-            <p><strong>Développement Personnel</strong></p>
-            <small>Inspirez-vous, apprenez et grandissez avec des lectures motivantes et enrichissantes.</small>
-        </div>
-        <div class="category-box">
-            <div style="font-size: 2.5rem;">🧒</div>
-            <p><strong>Jeunesse</strong></p>
-            <small>Des histoires amusantes et éducatives pour les petits et les jeunes lecteurs.</small>
-        </div>
-    </div>
-</section>
-
-
- <!-- App Preview Section -->
-<section class="app-preview" id="preview">
-    <h2 class="section-title">Aperçu de l'Application</h2>
-    
-    <div class="preview-container">
-        <div class="preview-phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=800&fit=crop" alt="Écran accueil Kaylire">
+        <h2 class="section-title">Explorez Nos Catégories</h2>
+        <div class="categories-grid">
+            <div class="category-box">
+                <div style="font-size: 2.5rem;">📖</div>
+                <p><strong>Romans</strong></p>
+                <small>Plongez dans des histoires captivantes et laissez-vous emporter par l’imaginaire.</small>
             </div>
-            <div class="phone-home"></div>
-        </div>
-        <div class="preview-features">
-            <h3>Écran d'Accueil</h3>
-            <p>Découvrez vos prochaines lectures en un clin d'œil. Kaylire vous propose les livres les plus captivants du moment dans une interface simple et agréable.</p>
-            <ul class="preview-list">
-                <li>Suggestions personnalisées selon vos goûts</li>
-                <li>Découverte d’auteurs et de genres variés</li>
-                <li>Listes de lectures tendance et populaires</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="preview-container reverse">
-        <div class="preview-phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <img src="https://images.unsplash.com/photo-1507842217343-583684e5fef5?w=400&h=800&fit=crop" alt="Lecteur Kaylire">
+            <div class="category-box">
+                <div style="font-size: 2.5rem;">🏛️</div>
+                <p><strong>Classiques</strong></p>
+                <small>Redécouvrez les chefs-d’œuvre qui ont marqué la littérature à travers le temps.</small>
             </div>
-            <div class="phone-home"></div>
-        </div>
-        <div class="preview-features">
-            <h3>Lecteur Immersif</h3>
-            <p>Plongez dans vos livres préférés avec un confort maximal. Mode sombre, police ajustable et marque-pages pour une lecture sans interruption.</p>
-            <ul class="preview-list">
-                <li>Lecture confortable jour et nuit</li>
-                <li>Ajustement du texte selon vos préférences</li>
-                <li>Progression sauvegardée automatiquement</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="preview-container">
-        <div class="preview-phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=400&h=800&fit=crop" alt="Bibliothèque Kaylire">
+            <div class="category-box">
+                <div style="font-size: 2.5rem;">✍️</div>
+                <p><strong>Poésie</strong></p>
+                <small>Laissez-vous toucher par des mots qui vibrent et résonnent dans votre cœur.</small>
             </div>
-            <div class="phone-home"></div>
+            <div class="category-box">
+                <div style="font-size: 2.5rem;">🌍</div>
+                <p><strong>Littérature Africaine</strong></p>
+                <small>Explorez les récits, contes et voix uniques du continent africain.</small>
+            </div>
+            <div class="category-box">
+                <div style="font-size: 2.5rem;">💡</div>
+                <p><strong>Développement Personnel</strong></p>
+                <small>Inspirez-vous, apprenez et grandissez avec des lectures motivantes et enrichissantes.</small>
+            </div>
+            <div class="category-box">
+                <div style="font-size: 2.5rem;">🧒</div>
+                <p><strong>Jeunesse</strong></p>
+                <small>Des histoires amusantes et éducatives pour les petits et les jeunes lecteurs.</small>
+            </div>
         </div>
-        <div class="preview-features">
-            <h3>Votre Bibliothèque</h3>
-            <p>Organisez vos lectures, marquez vos passages préférés et retrouvez facilement vos livres favoris. Kaylire transforme votre expérience de lecture en un véritable plaisir.</p>
-            <ul class="preview-list">
-                <li>Collections personnelles et organisées</li>
-                <li>Marque-pages et notes pour vos passages clés</li>
-                <li>Historique de lecture accessible à tout moment</li>
-            </ul>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Stats Section -->
-<section class="stats">
-    <div class="stats-container">
-        <div class="stat-item">
-            <h3>50K+</h3>
-            <p>Livres à explorer</p>
+
+    <!-- App Preview Section -->
+    <section class="app-preview" id="preview">
+        <h2 class="section-title">Aperçu de l'Application</h2>
+
+        <div class="preview-container">
+            <div class="preview-phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=800&fit=crop"
+                        alt="Écran accueil Kaylire">
+                </div>
+                <div class="phone-home"></div>
+            </div>
+            <div class="preview-features">
+                <h3>Écran d'Accueil</h3>
+                <p>Découvrez vos prochaines lectures en un clin d'œil. Kaylire vous propose les livres les plus
+                    captivants du moment dans une interface simple et agréable.</p>
+                <ul class="preview-list">
+                    <li>Suggestions personnalisées selon vos goûts</li>
+                    <li>Découverte d’auteurs et de genres variés</li>
+                    <li>Listes de lectures tendance et populaires</li>
+                </ul>
+            </div>
         </div>
-        <div class="stat-item">
-            <h3>100K+</h3>
-            <p>Lecteurs passionnés</p>
+
+        <div class="preview-container reverse">
+            <div class="preview-phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583684e5fef5?w=400&h=800&fit=crop"
+                        alt="Lecteur Kaylire">
+                </div>
+                <div class="phone-home"></div>
+            </div>
+            <div class="preview-features">
+                <h3>Lecteur Immersif</h3>
+                <p>Plongez dans vos livres préférés avec un confort maximal. Mode sombre, police ajustable et
+                    marque-pages pour une lecture sans interruption.</p>
+                <ul class="preview-list">
+                    <li>Lecture confortable jour et nuit</li>
+                    <li>Ajustement du texte selon vos préférences</li>
+                    <li>Progression sauvegardée automatiquement</li>
+                </ul>
+            </div>
         </div>
-        <div class="stat-item">
-            <h3>15M+</h3>
-            <p>Pages lues avec enthousiasme</p>
+
+        <div class="preview-container">
+            <div class="preview-phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=400&h=800&fit=crop"
+                        alt="Bibliothèque Kaylire">
+                </div>
+                <div class="phone-home"></div>
+            </div>
+            <div class="preview-features">
+                <h3>Votre Bibliothèque</h3>
+                <p>Organisez vos lectures, marquez vos passages préférés et retrouvez facilement vos livres favoris.
+                    Kaylire transforme votre expérience de lecture en un véritable plaisir.</p>
+                <ul class="preview-list">
+                    <li>Collections personnelles et organisées</li>
+                    <li>Marque-pages et notes pour vos passages clés</li>
+                    <li>Historique de lecture accessible à tout moment</li>
+                </ul>
+            </div>
         </div>
-        <div class="stat-item">
-            <h3>4.8★</h3>
-            <p>Notation moyenne par nos lecteurs</p>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>50K+</h3>
+                <p>Livres à explorer</p>
+            </div>
+            <div class="stat-item">
+                <h3>100K+</h3>
+                <p>Lecteurs passionnés</p>
+            </div>
+            <div class="stat-item">
+                <h3>15M+</h3>
+                <p>Pages lues avec enthousiasme</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.8★</h3>
+                <p>Notation moyenne par nos lecteurs</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Testimonials Section -->
@@ -877,7 +958,8 @@
         <div class="testimonials-grid">
             <div class="testimonial">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">“Kaylire a transformé mes moments de lecture. Tout est à portée de main, et j’adore les recommandations personnalisées !”</p>
+                <p class="testimonial-text">“Kaylire a transformé mes moments de lecture. Tout est à portée de main, et
+                    j’adore les recommandations personnalisées !”</p>
                 <div class="user-info">
                     <div class="user-avatar">A</div>
                     <div class="user-details">
@@ -888,7 +970,8 @@
             </div>
             <div class="testimonial">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">“Une application intuitive et belle. Je peux enfin lire mes classiques africains sur mon téléphone.”</p>
+                <p class="testimonial-text">“Une application intuitive et belle. Je peux enfin lire mes classiques
+                    africains sur mon téléphone.”</p>
                 <div class="user-info">
                     <div class="user-avatar">M</div>
                     <div class="user-details">
@@ -899,7 +982,8 @@
             </div>
             <div class="testimonial">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">“J’adore la fonction favoris et la possibilité de noter mes passages préférés. Une vraie révolution pour mes lectures.”</p>
+                <p class="testimonial-text">“J’adore la fonction favoris et la possibilité de noter mes passages
+                    préférés. Une vraie révolution pour mes lectures.”</p>
                 <div class="user-info">
                     <div class="user-avatar">S</div>
                     <div class="user-details">
@@ -950,4 +1034,5 @@
         </div>
     </footer>
 </body>
+
 </html>
