@@ -133,6 +133,19 @@
         .nav-links a:hover {
             color: #5372FF;
         }
+        .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    background: #fff; /* tu peux changer la couleur selon ton design */
+    position: absolute;
+    top: 60px; /* selon la hauteur de ta navbar */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    z-index: 1000;
+}
 
         .menu-toggle {
             display: none;
@@ -1115,6 +1128,7 @@
         .about-image img:hover {
             transform: scale(1.05);
         }
+        
     </style>
 </head>
 
@@ -1152,7 +1166,7 @@
             </p>
             <div class="cta-buttons">
                 <a href="#download" class="btn btn-primary">Commencer à Lire</a>
-                <a href="#features" class="btn btn-secondary">En Savoir Plus</a>
+                <a href="#abouts" class="btn btn-secondary">En Savoir Plus</a>
             </div>
         </div>
     </section>
@@ -1240,13 +1254,15 @@
             <img src="./images/1.png" alt="Écran accueil Kaylire">
             <div class="preview-features">
                 <h3>Écran d'Accueil</h3>
-                <p>Découvrez vos prochaines lectures en un clin d'œil. Kaylire vous propose les livres les plus
-                    captivants du moment dans une interface simple et agréable.</p>
-                <ul class="preview-list">
-                    <li>Suggestions personnalisées selon vos goûts</li>
-                    <li>Découverte d'auteurs et de genres variés</li>
-                    <li>Listes de lectures tendance et populaires</li>
-                </ul>
+                <p>
+        L’écran d’accueil de <strong>KayLire</strong> offre une expérience fluide et intuitive. 
+        Les utilisateurs peuvent rechercher un livre, explorer les œuvres à la une, 
+        parcourir les catégories et suivre les tendances du moment.
+      </p>
+      <p>
+        Une interface claire et inspirante qui fait de chaque ouverture de l’application 
+        une invitation à lire, apprendre et découvrir.
+      </p>
             </div>
         </div>
 
@@ -1254,13 +1270,16 @@
             <img src="./images/2.png" alt="Écran accueil Kaylire">
             <div class="preview-features">
                 <h3>Lecteur Immersif</h3>
-                <p>Plongez dans vos livres préférés avec un confort maximal. Mode sombre, police ajustable et
-                    marque-pages pour une lecture sans interruption.</p>
-                <ul class="preview-list">
-                    <li>Lecture confortable jour et nuit</li>
-                    <li>Ajustement du texte selon vos préférences</li>
-                    <li>Progression sauvegardée automatiquement</li>
-                </ul>
+                <p>
+        Découvrez la fiche détaillée de chaque livre sur <strong>KayLire</strong> : 
+        couverture, auteur, nombre de pages, durée de lecture, note moyenne et avis des lecteurs. 
+        L’utilisateur peut lire la description, explorer les avis de la communauté et 
+        télécharger son livre en un clic.
+      </p>
+      <p>
+        Une interface pensée pour une lecture <strong>simple, fluide et inspirante</strong>, 
+        qui valorise la richesse de la littérature africaine et francophone.
+      </p>
             </div>
         </div>
 
@@ -1268,83 +1287,97 @@
             <img src="./images/3.png" alt="Écran accueil Kaylire">
             <div class="preview-features">
                 <h3>Votre Bibliothèque</h3>
-                <p>Organisez vos lectures, marquez vos passages préférés et retrouvez facilement vos livres favoris.
-                    Kaylire transforme votre expérience de lecture en un véritable plaisir.</p>
-                <ul class="preview-list">
-                    <li>Collections personnelles et organisées</li>
-                    <li>Marque-pages et notes pour vos passages clés</li>
-                    <li>Historique de lecture accessible à tout moment</li>
-                </ul>
+                <p>
+        La section <strong>Ma Bibliothèque</strong> de KayLire vous permet de suivre vos lectures en cours, visualiser votre progression et retrouver vos livres favoris en un clin d’œil.
+        Chaque ouvrage affiche son avancement, la page en cours et une couverture pour mieux vous repérer.
+      </p>
+      <p>
+        Que vous soyez en pleine découverte ou sur le point de terminer un roman, <strong>votre bibliothèque devient un espace personnel et inspirant</strong>.
+        Une interface pensée pour vous encourager à lire, à progresser et à savourer chaque page.
+      </p>
+
             </div>
         </div>
 
         <div class="preview-container reverse">
             <img src="./images/11.png" alt="Écran accueil Kaylire">
             <div class="preview-features">
-                <h3>Lecteur Immersif</h3>
-                <p>Plongez dans vos livres préférés avec un confort maximal. Mode sombre, police ajustable et
-                    marque-pages pour une lecture sans interruption.</p>
-                <ul class="preview-list">
-                    <li>Lecture confortable jour et nuit</li>
-                    <li>Ajustement du texte selon vos préférences</li>
-                    <li>Progression sauvegardée automatiquement</li>
-                </ul>
+                <h3>Personnalisez votre confort de lecture</h3>
+      <p>
+        Parce que chaque lecteur est unique, KayLire vous offre des <strong>paramètres de lecture entièrement personnalisables</strong>.
+        Choisissez le thème qui vous convient — Classique, Sépia ou Nuit — et ajustez la taille, le style et l’alignement du texte pour un confort optimal.
+      </p>
+      <p>
+        Que vous lisiez dans le calme du soir ou en plein jour, l’interface s’adapte à votre rythme et à vos préférences.
+        <strong>Lire devient un plaisir sur mesure</strong>, pensé pour vous accompagner à chaque page.
+      </p>
+
+    </div>
+
             </div>
         </div>
 
         <div class="preview-container">
             <img src="./images/5.png" alt="Écran accueil Kaylire">
             <div class="preview-features">
-                <h3>Votre Bibliothèque</h3>
-                <p>Organisez vos lectures, marquez vos passages préférés et retrouvez facilement vos livres favoris.
-                    Kaylire transforme votre expérience de lecture en un véritable plaisir.</p>
-                <ul class="preview-list">
-                    <li>Collections personnelles et organisées</li>
-                    <li>Marque-pages et notes pour vos passages clés</li>
-                    <li>Historique de lecture accessible à tout moment</li>
-                </ul>
+                <h3>Explorez, découvrez, laissez-vous surprendre</h3>
+      <p>
+        La section <strong>Explorer</strong> de KayLire est votre porte d’entrée vers de nouvelles inspirations littéraires.
+        Plongez dans des citations marquantes, partez à la rencontre d’auteurs passionnants, participez à des jeux-concours et explorez votre bibliothèque physique.
+      </p>
+      <p>
+        Une interface intuitive et colorée vous guide dans vos découvertes, avec des accès rapides et une navigation fluide.
+        <strong>Chaque clic est une invitation à lire autrement</strong>.
+      </p>
+
             </div>
         </div>
 
         <div class="preview-container reverse">
             <img src="./images/6.png" alt="Écran accueil Kaylire">
             <div class="preview-features">
-                <h3>Lecteur Immersif</h3>
-                <p>Plongez dans vos livres préférés avec un confort maximal. Mode sombre, police ajustable et
-                    marque-pages pour une lecture sans interruption.</p>
-                <ul class="preview-list">
-                    <li>Lecture confortable jour et nuit</li>
-                    <li>Ajustement du texte selon vos préférences</li>
-                    <li>Progression sauvegardée automatiquement</li>
-                </ul>
+                <h3>Partez à la découverte des bibliothèques de Dakar</h3>
+      <p>
+        KayLire vous guide à travers les <strong>bibliothèques les plus accessibles et enrichissantes de Dakar</strong>.
+        Recherchez par quartier, explorez les abonnements disponibles, et trouvez l’espace qui correspond à vos besoins — que ce soit pour étudier, lire ou simplement vous ressourcer.
+      </p>
+      <p>
+        De la Bibliothèque Nationale au campus de l’UCAD, en passant par des espaces partenaires comme l’American Corner, <strong>chaque lieu est présenté avec clarté</strong> : localisation, coût, et type d’accès.
+        Une interface pensée pour les étudiants, les curieux et les passionnés de lecture.
+      </p>
+
             </div>
         </div>
 
         <div class="preview-container">
             <img src="./images/9.png" alt="Écran accueil Kaylire">
             <div class="preview-features">
-                <h3>Votre Bibliothèque</h3>
-                <p>Organisez vos lectures, marquez vos passages préférés et retrouvez facilement vos livres favoris.
-                    Kaylire transforme votre expérience de lecture en un véritable plaisir.</p>
-                <ul class="preview-list">
-                    <li>Collections personnelles et organisées</li>
-                    <li>Marque-pages et notes pour vos passages clés</li>
-                    <li>Historique de lecture accessible à tout moment</li>
-                </ul>
+                <h3>jeu-concours</h3>
+      <p>
+        KayLire vous propose une expérience ludique avec sa <strong>Roue de la Fortune</strong> : un jeu-concours interactif pour récompenser votre fidélité.
+        Lancez la roue et tentez de remporter des cadeaux surprises comme des abonnements, des tee-shirts personnalisés, des points PECA ou même des cartes cadeaux.
+      </p>
+      <p>
+        <strong>Un clic, un tour, une chance de gagner</strong> : chaque participation est une opportunité de découvrir un nouveau bonus.
+        Une manière originale et motivante d’enrichir votre expérience de lecture.
+      </p>
+
             </div>
         </div>
 
         <div class="preview-container reverse">
             <img src="./images/7.png" alt="Écran accueil Kaylire">
             <div class="preview-features">
-                <h3>Lecteur Immersif</h3>
-                <p>Plongez dans vos livres préférés avec un confort maximal. Mode sombre, police ajustable et
-                    marque-pages pour une lecture sans interruption.</p>
-                <ul class="preview-list">
-                    <li>Lecture confortable jour et nuit</li>
-                    <li>Ajustement du texte selon vos préférences</li>
-                    <li>Progression sauvegardée automatiquement</li>
-                </ul>
+                <h3>Inspirez-vous, une citation à la fois</h3>
+      <p>
+        La section <strong>Citations</strong> de KayLire vous propose des pensées inspirantes d’auteurs et de personnalités qui ont marqué le monde.
+        Chaque citation est une invitation à réfléchir, à rêver, à avancer.
+      </p>
+      <p>
+        Que ce soit pour démarrer la journée avec énergie ou pour nourrir votre esprit entre deux lectures, <strong>ces mots choisis vous accompagnent</strong> avec bienveillance et profondeur.
+        Une touche de sagesse dans votre univers de lecture.
+      </p>
+
             </div>
         </div>
     </section>
@@ -1443,8 +1476,8 @@
         <h2 class="section-title">Téléchargez Kaylire</h2>
         <p>Emportez votre bibliothèque partout avec vous et commencez votre voyage de lecture dès aujourd'hui !</p>
         <div class="download-buttons">
-            <a href="#" class="store-btn"> <img height="20" src="./images/svg/android-logo.svg" alt=""> Disponible sur Play Store</a>
-            <a href="#" class="store-btn"><img height="20" src="./images/svg/apple-logo.svg" alt="">  Disponible sur App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.kaylire.app&pcampaignid=web_share" class="store-btn"> <img height="20" src="./images/svg/playstore.svg" alt=""> Disponible sur Play Store</a>
+            <a href="https://apps.apple.com/sn/app/kay-lire/id6748661876?l=fr-FR" class="store-btn"><img height="20" src="./images/svg/apple-store.svg" alt="">  Disponible sur App Store</a>
         </div>
     </section>
 
@@ -1478,6 +1511,12 @@
     </footer>
 
     <script>
+         const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
         // Particles Animation
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 50; i++) {
