@@ -1552,10 +1552,20 @@
     <script>
          const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-
+     const links = document.querySelectorAll('.nav-links a');
+     
+   // Ouvrir / fermer le menu quand on clique sur le burger
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
+     // Ouvrir / fermer le menu quand on clique sur le burger
+  
+  // Fermer le menu quand on clique sur un lien
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
         // Particles Animation
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 50; i++) {
