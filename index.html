@@ -133,19 +133,57 @@
         .nav-links a:hover {
             color: #5372FF;
         }
-        .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    background: #fff; /* tu peux changer la couleur selon ton design */
-    position: absolute;
-    top: 60px; /* selon la hauteur de ta navbar */
-    left: 0;
-    width: 100%;
-    text-align: center;
-    gap: 1rem;
-    padding: 1rem 0;
-    z-index: 1000;
+       /* Cacher le menu burger sur grand écran */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #1f75fe;
+  border-radius: 5px;
+}
+
+/* Menu normal sur PC */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+/* Responsive : activer le burger */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fffaf7;
+    position: absolute;
+    top: 70px;
+    right: 10%;
+    width: 80%;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex; /* quand actif */
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+}
+
 
         .menu-toggle {
             display: none;
@@ -169,21 +207,19 @@
         /* Vidéo de fond */
         .hero-video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            /* Derrière le contenu mais au-dessus du fond */
-            filter: brightness(0.7);
-            /* Optionnel : assombrit un peu pour lisibilité */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* ✅ met la vidéo derrière le contenu cliquable */
+  filter: brightness(0.7);
         }
 
         /* Cercle animé du ::before au-dessus de la vidéo */
         .hero::before,
         .hero::after {
-            z-index: 1;
+            z-index: -1;
         }
 
         /* Contenu au-dessus de tout */
@@ -331,17 +367,14 @@
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
+           background: linear-gradient(135deg, #0dc064, #0aa352);
             color: white;
-            border: 2px solid white;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(13, 192, 100, 0.3);
         }
 
         .btn-secondary:hover {
             transform: translateY(-5px);
-            background: white;
-            color: #5372FF;
-            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(13, 192, 100, 0.4);
         }
 
         /* Features Section */
@@ -1052,82 +1085,88 @@
             }
         }
 
-        .about {
-            background: linear-gradient(135deg, #ffffff, #ffffff);
-            padding: 80px 10%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+       .about {
+    padding: 80px 10%;
+    background-color: #fffaf7;
+    text-align: center;
+}
 
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
+.about .section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #5372FF, #0dc064);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .about-text {
-            flex: 1;
-            max-width: 600px;
-        }
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .about-text .section-title {
-            font-size: 2.2em;
-            color: #5372FF;
-            margin-bottom: 15px;
-        }
+.about-text {
+    flex: 1;
+    max-width: 600px;
+}
 
-        .about-text .quote {
-            font-style: italic;
-            color: #5a4b41;
-            font-size: 1.1em;
-            margin-bottom: 25px;
-        }
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
 
-        .about-text .author {
-            display: block;
-            text-align: right;
-            font-weight: bold;
-            color: #0dc064;
-        }
+.quote {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
 
-        .about-text .vision {
-            font-size: 1.05em;
-            color: #333;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+.author {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0dc064;
+}
 
-        .about-text .btn {
-            background-color: #0dc064;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+.vision {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+}
 
-        .about-text .btn:hover {
-            background-color: #0dc064;
-        }
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0dc064, #0aa352);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
 
-        .about-image {
-            flex: 1;
-            text-align: center;
-        }
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(13,192,100,0.3);
+}
 
-        .about-image img {
-            width: 100%;
-            max-width: 450px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
-        }
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
-        .about-image img:hover {
-            transform: scale(1.05);
-        }
         
     </style>
 </head>
@@ -1383,28 +1422,28 @@
     </section>
 
     <section class="about" id="abouts">
-        <div class="about-content">
-            <div class="about-text">
-                <h2 class="section-title">En Savoir Plus</h2>
-                <p class="quote">
-                    “Un lecteur vit mille vies avant de mourir. Celui qui ne lit jamais n’en vit qu’une.”
-                    <span class="author">— George R.R. Martin</span>
-                </p>
-                <p class="vision">
-                    Chez <strong>Kaylire</strong>, nous croyons que chaque lecture est une porte ouverte sur le monde.
-                    Notre mission est simple : <strong>rendre la littérature accessible à tous</strong>, valoriser les
-                    auteurs africains et faire découvrir des voix inspirantes venues d’ailleurs.
-                    <br><br>
-                    Kaylire, c’est plus qu’une bibliothèque numérique — c’est une communauté de passionnés qui lisent,
-                    partagent et font vivre la culture à travers les mots.
-                </p>
-                <a href="#categories" class="btn">Découvrir Nos Livres</a>
-            </div>
-            <div class="about-image">
-                <img src="images/femme.png" alt="Lecture africaine" />
-            </div>
+    <h2 class="section-title">En Savoir Plus</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p class="quote">
+                “Un lecteur vit mille vies avant de mourir. Celui qui ne lit jamais n’en vit qu’une.”
+                <span class="author">— George R.R. Martin</span>
+            </p>
+            <p class="vision">
+                Chez <strong>Kaylire</strong>, nous croyons que chaque lecture est une porte ouverte sur le monde.
+                Notre mission est simple : <strong>rendre la littérature accessible à tous</strong>, valoriser les
+                auteurs africains et faire découvrir des voix inspirantes venues d’ailleurs.
+                <br><br>
+                Kaylire, c’est plus qu’une bibliothèque numérique — c’est une communauté de passionnés qui lisent,
+                partagent et font vivre la culture à travers les mots.
+            </p>
+            <a href="#categories" class="btn">Découvrir Nos Livres</a>
         </div>
-    </section>
+        <div class="about-image">
+            <img src="images/femme.png" alt="Lecture africaine" />
+        </div>
+    </div>
+</section>
 
     <!-- Stats Section -->
     <section class="stats">
@@ -1500,8 +1539,8 @@
             <div class="footer-section">
                 <h4>Contact</h4>
                 <ul>
-                    <li>Email: support@kaylire.com</li>
-                    <li>Téléphone: +221 77 123 45 67</li>
+                    <li>Email: kaylire@gmail.com</li>
+                    <li>Téléphone: +221 78 428 70 25</li>
                 </ul>
             </div>
         </div>
